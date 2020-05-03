@@ -4,9 +4,13 @@ import resolve from './resolve'
 
 export async function geneLookup(geneName) {
     // 1st API call to Gene Network 
+
+    // Proxy
+    const cors_api_host = 'cors-anywhere.herokuapp.com';
+
     const resGene = await resolve(axios({
         method: 'get',
-        url: 'https://www.genenetwork.nl/api/v1/gene/' + geneName
+        url: 'https://' + cors_api_host + '/genenetwork.nl/api/v1/gene/' + geneName
     }))
 
     // If error is returned, return function
@@ -20,7 +24,7 @@ export async function geneLookup(geneName) {
     // 2nd API call to ensembl, using ENSEMBL ID
     const resEnsembl = await resolve(axios({
         method: 'get',
-        url: 'http://rest.ensembl.org/lookup/id/' + ensemblID + '?expand=1;content-type=application/json'
+        url: 'https://' + cors_api_host + '/rest.ensembl.org/lookup/id/' + ensemblID + '?expand=1;content-type=application/json'
     }))
     
     // If error is returned, return function
