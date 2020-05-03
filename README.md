@@ -1,7 +1,5 @@
-# Gene Querying App
-
-Gene Querying App - (Gene Network API Ensembl API)
-Demo at https://pena-gene-app.herokuapp.com/
+# Gene Querying App - 
+* Uses [Gene Network API](https://www.genenetwork.nl/api) and [Ensembl Rest API](https://rest.ensembl.org/)
 
 ## Instructions 
 1. Navigate to [repo](https://github.com/carolinedpena/gene-app)
